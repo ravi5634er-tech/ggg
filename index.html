@@ -1,0 +1,950 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+#wfh-page {
+  --wfh-bg: #f7f9fc;
+  --wfh-paper: #ffffff;
+  --wfh-ink: #172033;
+  --wfh-muted: #647089;
+  --wfh-blue: #2584eb;
+  --wfh-teal: #08a7ae;
+  --wfh-border: #dde5ef;
+  --wfh-soft: #edf5fe;
+  --wfh-shadow: 0 16px 40px -20px #173f7040;
+  --wfh-gradient: linear-gradient(125deg, var(--wfh-blue), var(--wfh-teal));
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--wfh-bg);
+  color: var(--wfh-ink);
+  line-height: 1.65;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+#wfh-page *,
+#wfh-page *::before,
+#wfh-page *::after {
+  box-sizing: border-box;
+}
+#wfh-page h1,
+#wfh-page h2,
+#wfh-page h3,
+#wfh-page p {
+  margin: 0;
+  letter-spacing: 0;
+}
+#wfh-page h1,
+#wfh-page h2 {
+  font-family: "Fraunces", serif;
+}
+#wfh-page h1 {
+  font-size: 60px;
+  line-height: 1.12;
+}
+#wfh-page h2 {
+  font-size: 42px;
+  line-height: 1.2;
+}
+#wfh-page h3 {
+  font-size: 21px;
+  line-height: 1.35;
+}
+#wfh-page a {
+  color: inherit;
+  text-decoration: none;
+}
+#wfh-page img {
+  display: block;
+  max-width: 100%;
+}
+#wfh-page .wfh-wrap {
+  width: min(1180px, 100%);
+  padding: 0 24px;
+  margin: auto;
+}
+#wfh-page .wfh-section {
+  padding: 76px 0;
+  scroll-margin-top: 90px;
+}
+#wfh-page .wfh-muted {
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-gradient-text {
+  color: var(--wfh-blue);
+}
+#wfh-page .wfh-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--wfh-blue);
+  margin-bottom: 14px;
+}
+#wfh-page .wfh-center {
+  text-align: center;
+}
+#wfh-page .wfh-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+}
+#wfh-page .wfh-heading p {
+  margin-top: 16px;
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-topbar {
+  background: var(--wfh-ink);
+  color: var(--wfh-paper);
+  padding: 9px 0;
+  font-size: 12px;
+}
+#wfh-page .wfh-topbar .wfh-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#wfh-page .wfh-header {
+  background: var(--wfh-paper);
+  border-bottom: 1px solid var(--wfh-border);
+}
+#wfh-page .wfh-nav {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+#wfh-page .wfh-brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+#wfh-page .wfh-brand img {
+  width: 225px;
+  height: 76px;
+  object-fit: contain;
+}
+#wfh-page .wfh-nav-links {
+  display: flex;
+  gap: 26px;
+  font-size: 14px;
+  font-weight: 700;
+}
+#wfh-page .wfh-nav-links a:hover {
+  color: var(--wfh-blue);
+}
+#wfh-page .wfh-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 23px;
+  min-height: 50px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: var(--wfh-gradient);
+  color: var(--wfh-paper);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: var(--wfh-shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#wfh-page .wfh-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -12px var(--wfh-blue);
+}
+#wfh-page .wfh-button:focus-visible,
+#wfh-page a:focus-visible {
+  outline: 3px solid var(--wfh-teal);
+  outline-offset: 4px;
+}
+#wfh-page .wfh-button-outline {
+  background: var(--wfh-paper);
+  border-color: var(--wfh-blue);
+  color: var(--wfh-blue);
+}
+#wfh-page .wfh-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+#wfh-page .wfh-hero {
+  background: var(--wfh-soft);
+  padding: 64px 0 58px;
+}
+#wfh-page .wfh-two-col {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 48px;
+  align-items: center;
+}
+#wfh-page .wfh-hero-copy > p {
+  margin-top: 22px;
+  font-size: 17px;
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 23px;
+}
+#wfh-page .wfh-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--wfh-border);
+  background: var(--wfh-paper);
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+#wfh-page .wfh-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 25px;
+}
+#wfh-page .wfh-stat {
+  background: var(--wfh-paper);
+  border: 1px solid var(--wfh-border);
+  border-radius: 8px;
+  padding: 17px 12px;
+}
+#wfh-page .wfh-stat strong {
+  display: block;
+  color: var(--wfh-blue);
+  font-size: 23px;
+  line-height: 1.3;
+}
+#wfh-page .wfh-stat span {
+  font-size: 11px;
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-collage {
+  position: relative;
+  height: 495px;
+}
+#wfh-page .wfh-photo-one,
+#wfh-page .wfh-photo-two {
+  position: absolute;
+  width: 65%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--wfh-shadow);
+}
+#wfh-page .wfh-photo-one {
+  right: 0;
+  top: 0;
+  height: 310px;
+  animation: wfh-float 6s ease-in-out infinite;
+}
+#wfh-page .wfh-photo-two {
+  left: 0;
+  bottom: 0;
+  height: 310px;
+  border: 6px solid var(--wfh-paper);
+  animation: wfh-float 7s ease-in-out infinite reverse;
+}
+#wfh-page .wfh-photo-label {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  max-width: 58%;
+  background: var(--wfh-paper);
+  padding: 14px 18px;
+  border-radius: 8px;
+  box-shadow: var(--wfh-shadow);
+  font-weight: 800;
+  font-size: 14px;
+}
+#wfh-page .wfh-photo-label small {
+  display: block;
+  color: var(--wfh-muted);
+  font-weight: 500;
+}
+#wfh-page .wfh-ribbon {
+  background: var(--wfh-ink);
+  color: var(--wfh-paper);
+  padding: 14px 0;
+  overflow: hidden;
+}
+#wfh-page .wfh-ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: wfh-slide 28s linear infinite;
+}
+#wfh-page .wfh-ribbon-track span {
+  flex: 0 0 auto;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+#wfh-page .wfh-about-photo {
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+#wfh-page .wfh-about-copy p {
+  margin-top: 20px;
+}
+#wfh-page .wfh-list {
+  list-style: none;
+  padding: 0;
+  margin: 23px 0 0;
+}
+#wfh-page .wfh-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+#wfh-page .wfh-check {
+  flex-shrink: 0;
+  color: var(--wfh-teal);
+  font-weight: 800;
+}
+#wfh-page .wfh-logo-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 45px;
+}
+#wfh-page .wfh-logo-row img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  background: var(--wfh-paper);
+  border-radius: 8px;
+}
+#wfh-page .wfh-dark {
+  background: var(--wfh-ink);
+  color: var(--wfh-paper);
+}
+#wfh-page .wfh-dark .wfh-heading p {
+  color: var(--wfh-border);
+}
+#wfh-page .wfh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+#wfh-page .wfh-feature {
+  padding: 26px;
+  border: 1px solid var(--wfh-muted);
+  border-radius: 8px;
+  transition: transform .2s ease;
+}
+#wfh-page .wfh-feature:hover {
+  transform: translateY(-5px);
+}
+#wfh-page .wfh-feature-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--wfh-gradient);
+  border-radius: 8px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+#wfh-page .wfh-feature p {
+  color: var(--wfh-border);
+  font-size: 14px;
+  margin-top: 11px;
+}
+#wfh-page .wfh-step,
+#wfh-page .wfh-plan,
+#wfh-page .wfh-review {
+  background: var(--wfh-paper);
+  border: 1px solid var(--wfh-border);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: var(--wfh-shadow);
+}
+#wfh-page .wfh-step-number {
+  color: var(--wfh-blue);
+  font-family: "Fraunces", serif;
+  font-size: 58px;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+#wfh-page .wfh-step p {
+  color: var(--wfh-muted);
+  margin-top: 14px;
+  font-size: 14px;
+}
+#wfh-page .wfh-pricing {
+  background: var(--wfh-soft);
+}
+#wfh-page .wfh-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#wfh-page .wfh-plan-popular {
+  border: 2px solid var(--wfh-blue);
+}
+#wfh-page .wfh-popular-label {
+  align-self: flex-start;
+  background: var(--wfh-blue);
+  color: var(--wfh-paper);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+#wfh-page .wfh-price {
+  font-family: "Fraunces", serif;
+  color: var(--wfh-blue);
+  font-size: 44px;
+  line-height: 1.2;
+  margin-top: 14px;
+}
+#wfh-page .wfh-plan small {
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-plan .wfh-list {
+  font-size: 14px;
+  flex: 1;
+}
+#wfh-page .wfh-deposit {
+  border-top: 1px solid var(--wfh-border);
+  padding-top: 17px;
+  margin: 12px 0 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+#wfh-page .wfh-review p {
+  margin: 14px 0 20px;
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-stars {
+  color: var(--wfh-teal);
+}
+#wfh-page .wfh-final {
+  text-align: center;
+}
+#wfh-page .wfh-final p {
+  max-width: 660px;
+  margin: 20px auto 28px;
+  color: var(--wfh-border);
+}
+#wfh-page .wfh-footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--wfh-border);
+}
+#wfh-page .wfh-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 12px;
+  color: var(--wfh-muted);
+}
+#wfh-page .wfh-footer img {
+  width: 210px;
+  height: 70px;
+  object-fit: contain;
+}
+@keyframes wfh-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes wfh-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 980px) {
+  #wfh-page .wfh-nav-links { display: none; }
+  #wfh-page .wfh-two-col {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  #wfh-page .wfh-collage {
+    width: min(560px, 100%);
+    margin: auto;
+  }
+  #wfh-page .wfh-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #wfh-page .wfh-plans {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+    margin: auto;
+  }
+}
+@media (max-width: 600px) {
+  #wfh-page .wfh-wrap { padding: 0 18px; }
+  #wfh-page .wfh-section { padding: 52px 0; }
+  #wfh-page .wfh-hero { padding: 38px 0; }
+  #wfh-page h1 { font-size: 38px; }
+  #wfh-page h2 { font-size: 31px; }
+  #wfh-page .wfh-nav { gap: 8px; min-height: 76px; }
+  #wfh-page .wfh-brand img { width: 165px; height: 64px; }
+  #wfh-page .wfh-nav .wfh-button {
+    padding: 10px;
+    font-size: 11px;
+    min-height: 44px;
+  }
+  #wfh-page .wfh-grid,
+  #wfh-page .wfh-logo-row { grid-template-columns: 1fr; }
+  #wfh-page .wfh-logo-row {
+    max-width: 360px;
+    margin: 30px auto 0;
+    gap: 12px;
+  }
+  #wfh-page .wfh-collage { height: 365px; }
+  #wfh-page .wfh-photo-one,
+  #wfh-page .wfh-photo-two { height: 230px; }
+  #wfh-page .wfh-photo-label {
+    bottom: 30px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  #wfh-page .wfh-about-photo { height: 290px; }
+  #wfh-page .wfh-stat { padding: 13px 8px; }
+  #wfh-page .wfh-stat strong { font-size: 19px; }
+  #wfh-page .wfh-actions .wfh-button { width: 100%; }
+}
+@media (max-width: 360px) {
+  #wfh-page .wfh-nav { flex-wrap: wrap; padding: 10px 0; }
+  #wfh-page h1 { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #wfh-page *,
+  #wfh-page *::before,
+  #wfh-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
+<div id="wfh-page">
+  <div class="wfh-topbar">
+    <div class="wfh-wrap">
+      <span>Work From Home • Handwriting Projects</span>
+      <a
+        href="https://t.me/+N1g-IG0sotMwODE1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Connect on Telegram ↗</a>
+    </div>
+  </div>
+
+  <header class="wfh-header">
+    <div class="wfh-wrap wfh-nav">
+      <a class="wfh-brand" href="#wfh-home" aria-label="Work From Home">
+        <img
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/b4cd7f01-3f7c-43fe-b123-62cc588e8792/logo-book.png"
+          alt="Work From Home — book and pen logo"
+          width="1152"
+          height="576"
+        >
+      </a>
+
+      <nav class="wfh-nav-links" aria-label="Page navigation">
+        <a href="#wfh-home">Home</a>
+        <a href="#wfh-process">Process</a>
+        <a href="#wfh-pricing">Pricing</a>
+        <a href="#wfh-reviews">Reviews</a>
+      </nav>
+
+      <a
+        class="wfh-button"
+        href="https://t.me/+N1g-IG0sotMwODE1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Apply — 10 Days ↗</a>
+    </div>
+  </header>
+
+  <section id="wfh-home" class="wfh-hero">
+    <div class="wfh-wrap wfh-two-col">
+      <div class="wfh-hero-copy">
+        <div class="wfh-eyebrow">HANDWRITING WORK FROM HOME</div>
+
+        <h1>
+          Earn <span class="wfh-gradient-text">₹23,500–45,000</span>
+          Monthly from Home.
+        </h1>
+
+        <p>
+          Explore handwriting projects from home.
+          No experience needed. Materials delivered to your door.
+          Connect with the team on Telegram.
+        </p>
+
+        <div class="wfh-tags">
+          <span class="wfh-tag">✎ Handwriting Projects</span>
+          <span class="wfh-tag">⌂ Work From Home</span>
+          <span class="wfh-tag">◷ Flexible Schedule</span>
+        </div>
+
+        <div class="wfh-stats">
+          <div class="wfh-stat">
+            <strong>1000+</strong>
+            <span>Active Members</span>
+          </div>
+          <div class="wfh-stat">
+            <strong>₹50L+</strong>
+            <span>Total Paid Out</span>
+          </div>
+          <div class="wfh-stat">
+            <strong>4.9★</strong>
+            <span>User Rating</span>
+          </div>
+        </div>
+
+        <div class="wfh-actions">
+          <a
+            class="wfh-button"
+            href="https://t.me/+N1g-IG0sotMwODE1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Join Telegram Channel ↗</a>
+
+          <a
+            class="wfh-button wfh-button-outline"
+            href="https://t.me/+N1g-IG0sotMwODE1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Apply — 10 Days →</a>
+        </div>
+      </div>
+
+      <div class="wfh-collage">
+        <img
+          class="wfh-photo-one"
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/1ea16bc3-ec99-41f7-8044-467f3b2f9bbc/handwriting.jpg"
+          alt="Handwriting in a notebook"
+          width="1024"
+          height="1024"
+          fetchpriority="high"
+        >
+        <img
+          class="wfh-photo-two"
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/f9b037f3-66cf-4fc4-9da8-a269eba94d75/work-from-home.jpg"
+          alt="Writing from home"
+          width="1024"
+          height="1024"
+        >
+        <div class="wfh-photo-label">
+          ⌂ Work From Home
+          <small>Your space. Your schedule.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wfh-ribbon" aria-label="Handwriting projects and flexible schedules">
+    <div class="wfh-ribbon-track" aria-hidden="true">
+      <span>HANDWRITING PROJECTS ✦ WORK FROM HOME ✦ FLEXIBLE SCHEDULE ✦ TELEGRAM SUPPORT ✦</span>
+      <span>HANDWRITING PROJECTS ✦ WORK FROM HOME ✦ FLEXIBLE SCHEDULE ✦ TELEGRAM SUPPORT ✦</span>
+      <span>HANDWRITING PROJECTS ✦ WORK FROM HOME ✦ FLEXIBLE SCHEDULE ✦ TELEGRAM SUPPORT ✦</span>
+      <span>HANDWRITING PROJECTS ✦ WORK FROM HOME ✦ FLEXIBLE SCHEDULE ✦ TELEGRAM SUPPORT ✦</span>
+    </div>
+  </div>
+
+  <section class="wfh-section">
+    <div class="wfh-wrap">
+      <div class="wfh-two-col">
+        <img
+          class="wfh-about-photo"
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/d78bc7b7-15d0-4a51-821a-64f28d4d9a2e/kit.jpg"
+          alt="Notebooks, pens and writing materials"
+          width="1024"
+          height="1024"
+          loading="lazy"
+        >
+
+        <div class="wfh-about-copy">
+          <div class="wfh-eyebrow">ABOUT US</div>
+          <h2>
+            Convey your imagination to your
+            <span class="wfh-gradient-text">audience.</span>
+          </h2>
+          <p class="wfh-muted">
+            Work From Home brings handwriting projects and writing
+            materials together. Find a project that suits your schedule
+            and connect with the team for registration details.
+          </p>
+          <ul class="wfh-list">
+            <li><span class="wfh-check">✓</span> Handwriting projects from home</li>
+            <li><span class="wfh-check">✓</span> Writing materials delivered to your address</li>
+            <li><span class="wfh-check">✓</span> Project details and support on Telegram</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wfh-logo-row" aria-label="Three Work From Home logos">
+        <img
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/b4cd7f01-3f7c-43fe-b123-62cc588e8792/logo-book.png"
+          alt="Work From Home logo with book and pen"
+          width="1152"
+          height="576"
+          loading="lazy"
+        >
+        <img
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/1c38d089-d35f-4f7d-8dcc-5a3d34922c4e/logo-house.png"
+          alt="Work From Home logo with house and pen nib"
+          width="1152"
+          height="576"
+          loading="lazy"
+        >
+        <img
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/4bbc95db-de58-48f9-90c3-2d345619faaa/logo-monogram.png"
+          alt="Work From Home circular WFH logo"
+          width="1152"
+          height="576"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="wfh-section wfh-dark">
+    <div class="wfh-wrap">
+      <div class="wfh-heading wfh-center">
+        <div class="wfh-eyebrow">WHY CHOOSE US</div>
+        <h2>Built for writers, <span class="wfh-gradient-text">from home.</span></h2>
+      </div>
+
+      <div class="wfh-grid">
+        <article class="wfh-feature">
+          <div class="wfh-feature-icon" aria-hidden="true">⌂</div>
+          <h3>Work From Anywhere</h3>
+          <p>Complete handwriting projects from the comfort of your home.</p>
+        </article>
+
+        <article class="wfh-feature">
+          <div class="wfh-feature-icon" aria-hidden="true">₹</div>
+          <h3>Earnings</h3>
+          <p>Listed plans range from ₹23,500 to ₹45,000 monthly, with 50% advance payment.</p>
+        </article>
+
+        <article class="wfh-feature">
+          <div class="wfh-feature-icon" aria-hidden="true">▣</div>
+          <h3>Materials Delivered</h3>
+          <p>Notebooks, pens and writing materials delivered to your address.</p>
+        </article>
+
+        <article class="wfh-feature">
+          <div class="wfh-feature-icon" aria-hidden="true">◷</div>
+          <h3>Flexible Schedule</h3>
+          <p>Choose a project duration that matches your available time.</p>
+        </article>
+
+        <article class="wfh-feature">
+          <div class="wfh-feature-icon" aria-hidden="true">✓</div>
+          <h3>Refundable Deposit</h3>
+          <p>Review the deposit and refund conditions with the team before registering.</p>
+        </article>
+
+        <article class="wfh-feature">
+          <div class="wfh-feature-icon" aria-hidden="true">↗</div>
+          <h3>Telegram Support</h3>
+          <p>Connect with the team for available projects and registration details.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="wfh-process" class="wfh-section">
+    <div class="wfh-wrap">
+      <div class="wfh-heading wfh-center">
+        <div class="wfh-eyebrow">OUR PROCESS</div>
+        <h2>How it <span class="wfh-gradient-text">works.</span></h2>
+        <p>Three steps from finding a project to submitting your work.</p>
+      </div>
+
+      <div class="wfh-grid">
+        <article class="wfh-step">
+          <div class="wfh-step-number">01</div>
+          <h3>Join Telegram Channel</h3>
+          <p>Browse available projects and choose one that fits your schedule.</p>
+        </article>
+
+        <article class="wfh-step">
+          <div class="wfh-step-number">02</div>
+          <h3>Register &amp; Get Kit</h3>
+          <p>Confirm the project terms, registration requirements and writing-kit delivery details.</p>
+        </article>
+
+        <article class="wfh-step">
+          <div class="wfh-step-number">03</div>
+          <h3>Complete &amp; Submit</h3>
+          <p>Complete your pages and submit them according to the agreed project instructions.</p>
+        </article>
+      </div>
+
+      <div class="wfh-center" style="margin-top:32px">
+        <a
+          class="wfh-button"
+          href="https://t.me/+N1g-IG0sotMwODE1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View Available Projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="wfh-pricing" class="wfh-section wfh-pricing">
+    <div class="wfh-wrap">
+      <div class="wfh-heading wfh-center">
+        <div class="wfh-eyebrow">PRICING</div>
+        <h2>Choose your <span class="wfh-gradient-text">plan.</span></h2>
+        <p>Compare the listed page counts, durations and deposits.</p>
+      </div>
+
+      <div class="wfh-grid wfh-plans">
+        <article class="wfh-plan">
+          <h3>Plan 01</h3>
+          <div class="wfh-price">₹23,500</div>
+          <small>Monthly Salary</small>
+          <ul class="wfh-list">
+            <li><span class="wfh-check">✓</span>50 Pages (100 Sides)</li>
+            <li><span class="wfh-check">✓</span>7 Days Duration</li>
+            <li><span class="wfh-check">✓</span>50% Advance Payment</li>
+            <li><span class="wfh-check">✓</span>Free Home Delivery</li>
+            <li><span class="wfh-check">✓</span>Refundable Deposit</li>
+            <li><span class="wfh-check">✓</span>24h Payment Cycle</li>
+          </ul>
+          <div class="wfh-deposit">
+            <span>Refundable Deposit</span><strong>₹550</strong>
+          </div>
+          <a
+            class="wfh-button wfh-button-outline"
+            href="https://t.me/+N1g-IG0sotMwODE1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Choose Plan 01 →</a>
+        </article>
+
+        <article class="wfh-plan wfh-plan-popular">
+          <span class="wfh-popular-label">MOST POPULAR</span>
+          <h3>Plan 02</h3>
+          <div class="wfh-price">₹28,000</div>
+          <small>Monthly Salary</small>
+          <ul class="wfh-list">
+            <li><span class="wfh-check">✓</span>80 Pages (160 Sides)</li>
+            <li><span class="wfh-check">✓</span>15 Days Duration</li>
+            <li><span class="wfh-check">✓</span>50% Advance Payment</li>
+            <li><span class="wfh-check">✓</span>Free Home Delivery</li>
+            <li><span class="wfh-check">✓</span>Refundable Deposit</li>
+            <li><span class="wfh-check">✓</span>24h Payment Cycle</li>
+          </ul>
+          <div class="wfh-deposit">
+            <span>Refundable Deposit</span><strong>₹750</strong>
+          </div>
+          <a
+            class="wfh-button"
+            href="https://t.me/+N1g-IG0sotMwODE1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Choose Plan 02 →</a>
+        </article>
+
+        <article class="wfh-plan">
+          <h3>Plan 03</h3>
+          <div class="wfh-price">₹45,000</div>
+          <small>Monthly Salary</small>
+          <ul class="wfh-list">
+            <li><span class="wfh-check">✓</span>120 Pages (240 Sides)</li>
+            <li><span class="wfh-check">✓</span>30 Days Duration</li>
+            <li><span class="wfh-check">✓</span>50% Advance Payment</li>
+            <li><span class="wfh-check">✓</span>Free Home Delivery</li>
+            <li><span class="wfh-check">✓</span>Refundable Deposit</li>
+            <li><span class="wfh-check">✓</span>24h Payment Cycle</li>
+          </ul>
+          <div class="wfh-deposit">
+            <span>Refundable Deposit</span><strong>₹1,250</strong>
+          </div>
+          <a
+            class="wfh-button wfh-button-outline"
+            href="https://t.me/+N1g-IG0sotMwODE1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Choose Plan 03 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="wfh-reviews" class="wfh-section">
+    <div class="wfh-wrap">
+      <div class="wfh-heading wfh-center">
+        <div class="wfh-eyebrow">TESTIMONIALS</div>
+        <h2>Our customers <span class="wfh-gradient-text">speak.</span></h2>
+      </div>
+
+      <!-- Existing sample testimonials; replace with verified customer reviews. -->
+      <div class="wfh-grid">
+        <article class="wfh-review">
+          <div class="wfh-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“Pichhle 1 saal se yaha kaam kar raha hu. Salary hamesha time par milti hai.”</p>
+          <strong>Rahul Sharma</strong>
+        </article>
+
+        <article class="wfh-review">
+          <div class="wfh-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“2 saal se work from home kar rahi hu. Payment kabhi delay nahi hua.”</p>
+          <strong>Pooja Verma</strong>
+        </article>
+
+        <article class="wfh-review">
+          <div class="wfh-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“1 saal se regular income mil rahi hai. Support team bhi helpful hai.”</p>
+          <strong>Neha Gupta</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="wfh-section wfh-dark wfh-final">
+    <div class="wfh-wrap">
+      <div class="wfh-eyebrow">WORK FROM HOME</div>
+      <h2>Start your next <span class="wfh-gradient-text">handwriting project.</span></h2>
+      <p>
+        Join the Telegram channel to check available projects,
+        confirm the terms and connect with the team.
+      </p>
+      <a
+        class="wfh-button"
+        href="https://t.me/+N1g-IG0sotMwODE1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Join Telegram Channel ↗</a>
+    </div>
+  </section>
+
+  <footer class="wfh-footer">
+    <div class="wfh-wrap wfh-footer-inner">
+      <a href="#wfh-home" aria-label="Back to Work From Home">
+        <img
+          src="https://project--984a80b5-cc7a-4e9f-8e9e-f797a1e98470-dev.lovable.app/__l5e/assets-v1/b4cd7f01-3f7c-43fe-b123-62cc588e8792/logo-book.png"
+          alt="Work From Home"
+          width="1152"
+          height="576"
+          loading="lazy"
+        >
+      </a>
+      <span>© 2026 Work From Home. All rights reserved.</span>
+      <a
+        href="https://t.me/+N1g-IG0sotMwODE1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Telegram ↗</a>
+    </div>
+  </footer>
+</div>
